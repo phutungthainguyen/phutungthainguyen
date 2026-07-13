@@ -1,0 +1,60 @@
+html<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Trực Tuyến Của Bạn</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        header { background: #333; color: white; padding: 20px; text-align: center; position: sticky; top: 0; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1-fr)); gap: 20px; margin-top: 20px; }
+        .product-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .product-card img { max-width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+        .product-title { font-size: 18px; margin: 10px 0; color: #333; }
+        .product-price { color: #e44d26; font-weight: bold; font-size: 16px; margin-bottom: 15px; }
+        .btn-buy { background: #e44d26; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }
+        .btn-buy:hover { background: #ff5722; }
+        footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SHOP PHỤ TÙNG CHÍNH HÃNG</h1>
+        <p>Chuyên cung cấp sản phẩm chất lượng cao</p>
+    </header>
+
+    <div class="container">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="products-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <img src="https://scontent.fsgn2-10.fna.fbcdn.net/v/t39.30808-6/666316078_1981346809147289_7017299848541175459_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=52xcT2hWwOEQ7kNvwFsYSTa&_nc_oc=AdpHj9GFMcSe09mUT3ld_kdF-_fMbCnpy0jlU1rXJyJdE1C5eKJzP3Du4Ytl709popo&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&_nc_gid=c0qoPXHLOKP-z9fKBaDHYA&_nc_ss=7b2a8&oh=00_AQBlGoXG8NWPQ8-QScug2KJ9GF9KM1cQVSwNaW5YShPM7w&oe=6A5A1602" alt="Sản phẩm 1">
+                <div class="product-title">cupo hơi</div>
+                <div class="product-price">1.700.000 đ</div>
+                <button class="btn-buy" onclick="alert('Đã thêm vào giỏ hàng!')">Mua ngay</button>
+            </div>
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <img src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/739335287_2055134601768509_1419032694738712254_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x2400&ctp=s1080x2400&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=sdjmSBnH9yMQ7kNvwG7WXnn&_nc_oc=Adqi3vjz9NC717WcUoIfraXB_tB9SoLl4H4JoLDgNbA4tX4EwYnQWHLLGDrrBoY2tV0&_nc_zt=23&_nc_ht=scontent.fsgn2-8.fna&_nc_gid=f1kUckZJApl5v2rF1aH1iw&_nc_ss=7b2a8&oh=00_AQACJzuYJ73a20CGqg3OB0DCmY70u82iO-t4TjIz-96wJg&oe=6A5A089B" alt="Sản phẩm 2">
+                <div class="product-title">cupo điện</div>
+                <div class="product-price">1.900.000 đ</div>
+                <button class="btn-buy" onclick="alert('Đã thêm vào giỏ hàng!')">Mua ngay</button>
+            </div>
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <img src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/613493335_1912008096081161_2494622078672796726_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=0doTcWXyvQsQ7kNvwGm1P4S&_nc_oc=AdpXKQWfTRsCf_ovKvcG2iLlnlPZl6Nyef6BiCEi0XLSff0B67QyKCM_DIOz2wcPAWQ&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=SALDCDIzYPlihfHg9BrOhg&_nc_ss=7b2a8&oh=00_AQCmdt31bjTR1vCBcIiMEIwOvR_9QSgG-KfSv41paC1rXQ&oe=6A5A3CD1" alt="Sản phẩm 3">
+                <div class="product-title"> Đèn hậu xe tải Đô Thành Veam Teraco Đongben Olin Linker</div>
+                <div class="product-price">350.000 đ</div>
+                <button class="btn-buy" onclick="alert('Đã thêm vào giỏ hàng!')">Mua ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bản quyền thuộc về Cửa Hàng THÁI NGUYỄN</p>
+    </footer>
+
+</body>
+</html>
