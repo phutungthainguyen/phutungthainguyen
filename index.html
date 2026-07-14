@@ -1,15 +1,20 @@
-html<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cửa Hàng Trực Tuyến Của Bạn</title>
+    
+    <!-- Tối ưu hóa tiêu đề và mô tả để dễ tìm kiếm trên Google -->
+    <title>Shop Phụ Tùng Thái Nguyên - Phụ Tùng Xe Tải Chính Hãng</title>
+    <meta name="description" content="Chuyên cung cấp phụ tùng xe tải chính hãng chất lượng cao tại Thái Nguyên. Phân phối cupo hơi, cupo điện, đèn hậu, mui lướt gió giá tốt nhất. Liên hệ ngay!">
+    <meta name="keywords" content="phu tung thai nguyen, phụ tùng thái nguyên, shop phụ tùng chính hãng, phụ tùng xe tải thái nguyên">
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
         header { background: #333; color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
         
-        /* Đã sửa lỗi chia cột để sản phẩm xếp hàng ngang gọn gàng */
+        /* Cấu hình lưới giúp sản phẩm xếp hàng ngang gọn gàng, tự động chia từ 3-4 cột */
         .products-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
@@ -26,9 +31,10 @@ html<!DOCTYPE html>
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background: #fff;
         }
         
-        /* Giới hạn chiều cao ảnh để các khung sản phẩm đều tăm tắp */
+        /* Giới hạn kích thước ảnh đồng đều giúp các ô sản phẩm không bị lệch */
         .product-card img { 
             max-width: 100%; 
             height: 200px; 
@@ -37,20 +43,21 @@ html<!DOCTYPE html>
             margin-bottom: 10px;
         }
         
-        .product-title { font-size: 16px; margin: 10px 0; color: #333; font-weight: bold; min-height: 40px; }
+        .product-title { font-size: 16px; margin: 10px 0; color: #333; font-weight: bold; min-height: 40px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .product-price { color: #e44d26; font-weight: bold; font-size: 16px; margin-bottom: 15px; }
         
-        /* Định dạng lại nút gọi điện đẹp như nút mua hàng cũ */
+        /* Thiết kế nút bấm gọi điện nổi bật, trải rộng đều khung */
         .btn-call { 
             background: #e44d26; 
             color: white; 
             text-decoration: none;
-            padding: 10px 20px; 
+            padding: 12px 20px; 
             border-radius: 4px; 
-            display: inline-block;
+            display: block;
             font-size: 16px; 
             font-weight: bold;
             transition: 0.3s;
+            width: 100%;
         }
         .btn-call:hover { background: #ff5722; }
         footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 40px; }
@@ -59,8 +66,8 @@ html<!DOCTYPE html>
 <body>
 
     <header>
-        <h1>SHOP PHỤ TÙNG CHÍNH HÃNG</h1>
-        <p>Chuyên cung cấp sản phẩm chất lượng cao</p>
+        <h1>SHOP PHỤ TÙNG CHÍNH HÃNG THÁI NGUYỄN</h1>
+        <p>Chuyên cung cấp sản phẩm chất lượng cao - Uy tín hàng đầu</p>
     </header>
 
     <div class="container">
