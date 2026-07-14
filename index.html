@@ -6,16 +6,54 @@ html<!DOCTYPE html>
     <title>Cửa Hàng Trực Tuyến Của Bạn</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        header { background: #333; color: white; padding: 20px; text-align: center; position: sticky; top: 0; }
+        header { background: #333; color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1-fr)); gap: 20px; margin-top: 20px; }
-        .product-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .product-card img { max-width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
-        .product-title { font-size: 18px; margin: 10px 0; color: #333; }
+        
+        /* Đã sửa lỗi chia cột để sản phẩm xếp hàng ngang gọn gàng */
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+            gap: 20px; 
+            margin-top: 20px; 
+        }
+        
+        .product-card { 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            border-radius: 8px; 
+            text-align: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* Giới hạn chiều cao ảnh để các khung sản phẩm đều tăm tắp */
+        .product-card img { 
+            max-width: 100%; 
+            height: 200px; 
+            object-fit: contain; 
+            border-radius: 4px; 
+            margin-bottom: 10px;
+        }
+        
+        .product-title { font-size: 16px; margin: 10px 0; color: #333; font-weight: bold; min-height: 40px; }
         .product-price { color: #e44d26; font-weight: bold; font-size: 16px; margin-bottom: 15px; }
-        .btn-buy { background: #e44d26; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }
-        .btn-buy:hover { background: #ff5722; }
-        footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 4px; }
+        
+        /* Định dạng lại nút gọi điện đẹp như nút mua hàng cũ */
+        .btn-call { 
+            background: #e44d26; 
+            color: white; 
+            text-decoration: none;
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            display: inline-block;
+            font-size: 16px; 
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-call:hover { background: #ff5722; }
+        footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -31,52 +69,76 @@ html<!DOCTYPE html>
             <!-- Sản phẩm 1 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-10.fna.fbcdn.net/v/t39.30808-6/666316078_1981346809147289_7017299848541175459_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=52xcT2hWwOEQ7kNvwFsYSTa&_nc_oc=AdpHj9GFMcSe09mUT3ld_kdF-_fMbCnpy0jlU1rXJyJdE1C5eKJzP3Du4Ytl709popo&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&_nc_gid=c0qoPXHLOKP-z9fKBaDHYA&_nc_ss=7b2a8&oh=00_AQBlGoXG8NWPQ8-QScug2KJ9GF9KM1cQVSwNaW5YShPM7w&oe=6A5A1602" alt="Sản phẩm 1">
-                <div class="product-title">cupo hơi</div>
-                <div class="product-price">1.700.000 đ</div>
-               <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">cupo hơi</div>
+                    <div class="product-price">1.700.000 đ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
             <!-- Sản phẩm 2 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/739335287_2055134601768509_1419032694738712254_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x2400&ctp=s1080x2400&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=sdjmSBnH9yMQ7kNvwG7WXnn&_nc_oc=Adqi3vjz9NC717WcUoIfraXB_tB9SoLl4H4JoLDgNbA4tX4EwYnQWHLLGDrrBoY2tV0&_nc_zt=23&_nc_ht=scontent.fsgn2-8.fna&_nc_gid=f1kUckZJApl5v2rF1aH1iw&_nc_ss=7b2a8&oh=00_AQACJzuYJ73a20CGqg3OB0DCmY70u82iO-t4TjIz-96wJg&oe=6A5A089B" alt="Sản phẩm 2">
-                <div class="product-title">cupo điện</div>
-                <div class="product-price">1.900.000 đ</div>
-                <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">cupo điện</div>
+                    <div class="product-price">1.900.000 đ</div>
+                </div>
+                <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
             <!-- Sản phẩm 3 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/613493335_1912008096081161_2494622078672796726_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=0doTcWXyvQsQ7kNvwGm1P4S&_nc_oc=AdpXKQWfTRsCf_ovKvcG2iLlnlPZl6Nyef6BiCEi0XLSff0B67QyKCM_DIOz2wcPAWQ&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=SALDCDIzYPlihfHg9BrOhg&_nc_ss=7b2a8&oh=00_AQCmdt31bjTR1vCBcIiMEIwOvR_9QSgG-KfSv41paC1rXQ&oe=6A5A3CD1" alt="Sản phẩm 3">
-                <div class="product-title"> Đèn hậu xe tải Đô Thành Veam Teraco Đongben Olin Linker</div>
-                <div class="product-price">350.000 đ</div>
-               <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">Đèn hậu xe tải Đô Thành Veam Teraco Đongben Olin Linker</div>
+                    <div class="product-price">350.000 đ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
-      <!-- Sản phẩm 4 -->
+            <!-- Sản phẩm 4 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/611165808_1911197412828896_4814406511724256150_n.jpg?stp=dst-jpg_tt6&cstp=mx1542x2048&ctp=s1542x2048&_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_ohc=ypnFlAIt-b0Q7kNvwEO0wnA&_nc_oc=Adpr39etz8GDnXIH4cdMxmj7cKOLMVfLSIHSiC08goEEaG0s-4trd_6Ro5EbJQ0rhpM&_nc_zt=23&_nc_ht=scontent.fsgn2-8.fna&_nc_gid=hpjePALHXbzhVeqQ5KaIuw&_nc_ss=7b2a8&oh=00_AQBFMEHkRYP73hPcB7G7KeI3nMg0HN0DabMycl3u_ADdDg&oe=6A5B80CE" alt="Sản phẩm 4">
-                <div class="product-title">mui lươt gió composize</div>
-                <div class="product-price">liên hệ </div>
-               <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">mui lươt gió composize</div>
+                    <div class="product-price">Liên hệ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
-<!-- Sản phẩm 5 -->
+            <!-- Sản phẩm 5 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/611174095_1911197916162179_459865910778021907_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1542&ctp=s2048x1542&_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_ohc=LPGPSAxcgAIQ7kNvwFH8f5k&_nc_oc=AdrvtXzgAZlPAyKO7Ao9jZexjPPdfHS_Z6g8WBbvE_SeqJjeAHXu4dXc8mmHIyYDbow&_nc_zt=23&_nc_ht=scontent.fsgn2-9.fna&_nc_gid=lWMe4A_hm5N8UdbYHUD9og&_nc_ss=7b2a8&oh=00_AQA-68Nofx4McjSL-dwoVJrmna8l0qeeru0Pq2V-dg0yIg&oe=6A5B6F93" alt="Sản phẩm 5">
-                <div class="product-title">ốp cản hông composize</div>
-                <div class="product-price">liên hệ </div>
-               <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">ốp cản hông composize</div>
+                    <div class="product-price">Liên hệ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
-<!-- Sản phẩm 6 -->
+            <!-- Sản phẩm 6 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-10.fna.fbcdn.net/v/t39.30808-6/612609231_1911234152825222_8511420959608282717_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s960x1280&_nc_cat=109&ccb=1-7&_nc_sid=f727a1&_nc_ohc=l9dY1N2_ITYQ7kNvwH8daO0&_nc_oc=AdqVtLeS8Gaur7-4eLNSRrgjMfMqb95k_Nqlo79NyrGELQyCRmqiSQAMCNfjuN9wNfU&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&_nc_gid=4lYBNcrg-XV5tq5bJy2T1Q&_nc_ss=7b2a8&oh=00_AQCF8NjLRqqoigAr7Ha4FkGmSthu8tMnFBj2ifZBH-IDBg&oe=6A5B78C9" alt="Sản phẩm 6">
-                <div class="product-title">khóa tôm inox 304</div>
-                <div class="product-price">liên hệ </div>
-               <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">khóa tôm inox 304</div>
+                    <div class="product-price">Liên hệ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
-<!-- Sản phẩm 7 -->
+            <!-- Sản phẩm 7 -->
             <div class="product-card">
                 <img src="https://scontent.fsgn2-11.fna.fbcdn.net/v/t39.30808-6/612902247_1911236126158358_4305216770229949605_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_ohc=_Ob5Vm80xn4Q7kNvwF8tt7q&_nc_oc=AdoMGdstRMT8i7Cas27NReczXKSnCPGcYMgpJgNwVhygrLrtF9Af8_ol5hLOoXhIwd8&_nc_zt=23&_nc_ht=scontent.fsgn2-11.fna&_nc_gid=waeJsQlufGmkGKNuhEBJbw&_nc_ss=7b2a8&oh=00_AQCtIyvAnKz6K5LKy3ALqGvkGX4gDwKGuYMKRZHf9YG53g&oe=6A5B5BBF" alt="Sản phẩm 7">
-                <div class="product-title">khóa tôm sắt</div>
-                <div class="product-price">liên hệ </div>
-               <a href="tel:0904555424">Gọi ngay: 0904555424</a>
+                <div>
+                    <div class="product-title">khóa tôm sắt</div>
+                    <div class="product-price">Liên hệ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
             </div>
+            <!-- Sản phẩm 8 -->
+            <div class="product-card">
+                <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/613662262_1911199152828722_3427523125512273909_n.jpg?stp=dst-jpg_tt6&cstp=mx1542x2048&ctp=s1542x2048&_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_ohc=5SXsQzujH2EQ7kNvwFO6EMC&_nc_oc=AdpexSbY5TuRSteVWN0xkCizXDHZHyGuChWScZh3Gs-7UVs64xfMWFnNy2zYPvcToFc&_nc_zt=23&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=wRYhLPbJra7guWyajpbxcA&_nc_ss=7b2a8&oh=00_AQAztOfq8-1H1cdbxoY_wb7v25gTP14s7y-GqCZGq7cI9w&oe=6A5B7FFE" alt="Sản phẩm 8">
+                <div>
+                    <div class="product-title">lọc nhớt huyndai 110s</div>
+                    <div class="product-price">Liên hệ</div>
+                </div>
+               <a href="tel:0904555424" class="btn-call">Gọi ngay: 0904555424</a>
+            </div>
+        </div>
     </div>
 
     <footer>
